@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         Seguir todos os usuários na página atual do GitHub.
+// @name         github follow all users on page
 // @namespace    http://tampermonkey.net/
 // @version      0.1
 // @license      MIT License
-// @description  Seguir todos os usuários no perfil do usuário atual.
-// @author       Yuri Cunha
+// @description  follows all users in current users profile
+// @author       Leonid Fedotov
 // @match        https://github.com/*
 // @icon         https://www.google.com/s2/favicons?domain=github.com
 // ==/UserScript==
@@ -12,31 +12,31 @@
 (function() {
     'use strict';
 
-    if (document.querySelectorAll('.user-followers-container').length == 0) return;
+    if (document.querySelectorAll('.user-following-container').length == 0) return;
 
     function follow_all() {
 
-        console.log('Começando a seguir...')
-        const followButton = document.getElementById('follow-all')
-        followButton.disabled = false
-        followButton.onclick = () => {}
-        followButton.innerText = 'Seguindo usuários...'
+        console.log('Started following...')
+        const unfollowSwitchButton = document.getElementById('unfollow-all')
+        unfollowSwitchButton.disabled = true
+        unfollowSwitchButton.onclick = () => {}
+        unfollowSwitchButton.innerText = 'Following in progress...'
 
         setInterval(() => {
-            const followButton = document.querySelector('input[value="Follow"]')
-            if (followButton !== null) {
-                console.log(followButton.title)
-                followButton.click()
-                followButton.remove()
+            const unfollowButton = document.querySelector('input[value="Follow"]')
+            if (unfollowButton !== null) {
+                console.log(unfollowButton.title)
+                unfollowButton.click()
+                unfollowButton.remove()
             } else {
-                console.log('Follows finalizado.')
+                console.log('Unfollowing finished')
                 location.reload()
             }
         }, 2000);
     }
 
-    document.querySelector('.js-profile-editable-area .js-user-profile-bio').insertAdjacentHTML('afterEnd', '<div class="mb-3"><button name="button" type="button" class="btn btn-block" id="follow-all">Seguir todos os usuários na página atual.</button></div>')
-    console.log('Adicionado botão para seguir todos os usuários.')
+    document.querySelector('.js-profile-editable-area .js-user-profile-bio').insertAdjacentHTML('afterEnd', '<div class="mb-3"><button name="button" type="button" class="btn btn-block" id="unfollow-all">Seguir todos os usuários na página atual.</button></div>')
+    console.log('Added unfollow button')
 
-    document.getElementById('follow-all').onclick = follow_all;
+    document.getElementById('unfollow-all').onclick = follow_all;
 })();
