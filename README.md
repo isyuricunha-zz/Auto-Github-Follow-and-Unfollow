@@ -1,5 +1,4 @@
 <h1>(PT-BR) Script para seguir ou deixar de seguir usuários da página atual do GitHub. </h1>
-<br><br>
 
 <h1> Como usar: </h1>
 
