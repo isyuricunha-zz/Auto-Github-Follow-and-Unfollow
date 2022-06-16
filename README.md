@@ -10,7 +10,7 @@
 <br><br><br><br>
 
 
-# <h1> (ENG-US) Script to follow or unfollow users from the current GitHub page. </h1>
+# <h1>(ENG-US) Script to follow or unfollow users from the current GitHub page. </h1>
 
 # <h1> How to use:</h1>
 
