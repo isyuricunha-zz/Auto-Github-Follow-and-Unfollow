@@ -12,7 +12,7 @@
 
 # <h1> (ENG-US) Script to follow or unfollow users from the current GitHub page. </h1>
 
-# <h2> How to use:</h2>
+# <h1> How to use:</h1>
 
 - To start using it, you need to download [Tampermonkey](https://tampermonkey.net/) in your browser and install the extension. <br>
 - After installing [Tampermonkey](https://tampermonkey.net/), you need to add the script in Tampermonkey, or [click here] (extension://iikmkjmpaadaobahmlpeloendndfphd/options.html#nav=dashboard) to go straight to the Tampermonkey scripts page, but if it doesn't open properly, just click the extension icon and click "Add New Script". <br>
